@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Direção Certa - Caruaru</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
     <!--
     <script src="../build/scripts/ng-map.min.js"></script>
     -->
@@ -15,20 +23,65 @@
     <script src="js/geo_coder.js"></script>
     <script src="js/navigator_geolocation.js"></script>
     <script src="js/attr2_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script>
         angular.module('myApp', ['ngMap']).controller('MyCtrl', function($scope) {
             $scope.lat = -8.31995750752943, $scope.lng = -35.962371826171875;
         });
     </script>
 </head>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Marca e alternância se agrupados para melhor visualização móvel -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Logomarca da Empresa" /></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+
+                <div id = "bandeiras">
+                    <a href="index.html"><img src="img/bandeiras/brasil.png"></a>
+                    <a href="indexen.html"> <img src="img/bandeiras/uk.png"></a>
+                    <a href="indexes.html"><img src="img/bandeiras/spain.png"></a>
+                </div>
+
+                <div id = "navegação">
+                    <ul class="nav navbar-nav">
+
+                        <li><a data-scroll href="index.html#home">Início</a></li>
+                        <li><a href="pontosturisticos.html">Pontos Turisticos</a></li>
+                        <li><a data-scroll href="index.html#services">Serviços</a></li>
+                        <li><a data-scroll href="index.html#about">Novidades</a></li>
+                        <li><a data-scroll href="index.html#contact">Contatos</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <body ng-app="myApp">
-<div ng-controller="MyCtrl">
-    <map zoom="11" center="[{{lat}}, {{lng}}]" style="width:600px; height:400px">
+<div ng-controller="MyCtrl" align="center">
+    <br><br><br><br><br><br>
+    <map zoom="14" center="[{{lat}}, {{lng}}]" style="width:99%; height:400px">
         <marker position="[{{lat}}, {{lng}}]" title="position: {{lat}}, {{lng}}"></marker>
     </map>
     <br/>Latigude : <input type="number" ng-model="lat" />
     <br/>Longitude : <input type="number" ng-model="lng" />
 </div>
+
+
+
 </body>
 </html>
